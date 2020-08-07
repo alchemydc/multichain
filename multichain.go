@@ -11,6 +11,7 @@ type Asset string
 const (
 	BCH  = Asset("BCH")  // Bitcoin Cash
 	BTC  = Asset("BTC")  // Bitcoin
+	CELO = Asset("CELO") // Celo
 	DGB =  Asset("DGB")  // DigiByte
 	DOGE = Asset("DOGE") // Dogecoin
 	ETH  = Asset("ETH")  // Ether
@@ -43,6 +44,7 @@ const (
 	Acala       = Chain("Acala")
 	Bitcoin     = Chain("Bitcoin")
 	BitcoinCash = Chain("BitcoinCash")
+	Celo		= Chain("Ethereum")
 	DigiByte    = Chain("DigiByte")
 	Ethereum    = Chain("Ethereum")
 	Zcash       = Chain("Zcash")
