@@ -12,11 +12,37 @@ const (
 	BCH  = Asset("BCH")  // Bitcoin Cash
 	BTC  = Asset("BTC")  // Bitcoin
 	CELO = Asset("CELO") // Celo
-	DGB =  Asset("DGB")  // DigiByte
+	DGB  = Asset("DGB")  // DigiByte
+	DGB  = Asset("DGB")  // DigiByte
 	DOGE = Asset("DOGE") // Dogecoin
 	ETH  = Asset("ETH")  // Ether
+	SOL  = Asset("SOL")  // Solana
+	LUNA = Asset("LUNA") // Luna
 	ZEC  = Asset("ZEC")  // Zcash
 )
+
+// OriginChain returns the chain upon which the asset originates. For example,
+// the origin chain of BTC is Bitcoin.
+func (asset Asset) OriginChain() Chain {
+	switch asset {
+	case BCH:
+		return BitcoinCash
+	case BTC:
+		return Bitcoin
+	case DGB:
+		return DigiByte
+	case DOGE:
+		return Dogecoin
+	case ETH:
+		return Ethereum
+	case SOL:
+		return Solana
+	case ZEC:
+		return Zcash
+	default:
+		return Chain("")
+	}
+}
 
 // SizeHint returns the number of bytes required to represent the asset in
 // binary.
@@ -44,9 +70,12 @@ const (
 	Acala       = Chain("Acala")
 	Bitcoin     = Chain("Bitcoin")
 	BitcoinCash = Chain("BitcoinCash")
-	Celo		= Chain("Ethereum")
+	Celo        = Chain("Ethereum")
 	DigiByte    = Chain("DigiByte")
+	Dogecoin    = Chain("Dogecoin")
 	Ethereum    = Chain("Ethereum")
+	Solana      = Chain("Solana")
+	Terra       = Chain("Terra")
 	Zcash       = Chain("Zcash")
 )
 

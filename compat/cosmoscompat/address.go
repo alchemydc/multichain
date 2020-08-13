@@ -1,4 +1,4 @@
-package bitcoincompat
+package cosmoscompat
 
 import (
 	"fmt"
